@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "id": "autovclip",
+  "id": "autoclip",
   "version": "${version}",
-  "name": "Auto VClip",
+  "name": "Auto Clip",
   "description": "Why do people have such bad ideas.",
   "authors": [
     "mathrandom7910"
   ],
   "contact": {
-    "repo": "https://github.com/MeteorDevelopment/meteor-addon-template"
+    "repo": "https://github.com/Mathrandom7910/AutoClipAddon"
   },
   "icon": "assets/template/icon.png",
   "environment": "client",
   "entrypoints": {
     "meteor": [
-      "me.mathrandom7910.AutoVclip.AutoVclipAddon"
+      "me.mathrandom7910.AutoClip.AutoClipAddon"
     ]
   },
   "mixins": [

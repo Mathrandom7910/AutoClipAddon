@@ -1,4 +1,4 @@
-package me.mathrandom7910.AutoVclip.commands;
+package me.mathrandom7910.AutoClip.commands;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import meteordevelopment.meteorclient.systems.commands.Command;
@@ -14,7 +14,7 @@ import static com.mojang.brigadier.Command.SINGLE_SUCCESS;
 public class AVClipCommand extends Command {
     private MinecraftClient mc = MinecraftClient.getInstance();
     public AVClipCommand() {
-        super("avcilp", "a terrible idea");
+        super("avcilp", "a terrible idea", "avc");
     }
 
     private Block getBlock(BlockPos pos) {
@@ -23,24 +23,27 @@ public class AVClipCommand extends Command {
 
     private boolean doAutoClip(int incr) {
         BlockPos pos = mc.player.getBlockPos();
-        for(int i = incr; i < 10 * incr; i += incr) {
-            if(getBlock(mc.player.getBlockPos().add(0, i, 0)) == Blocks.AIR && getBlock(mc.player.getBlockPos().add(0, i + 1, 0)) == Blocks.AIR) {
-                ChatUtils.info("Found clip block " + i + " blocks " + (i > 1 ? "up" : "down") + ".");
+        //      -1            -10          -1
+        if(incr == 0) incr = 1;
+        for(int i = incr; incr > 0 ? i <= 10 : i >= -10; i += incr) {
+            if(getBlock(pos.add(0, i, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 1, 0)) == Blocks.AIR) {
+                ChatUtils.info("Found clip block " + i + " blocks " + (incr > 0 ? "up" : "down") + ".");
                 mc.player.setPosition(pos.getX(), pos.getY() + i, pos.getZ());
                 return true;
             }
         }
+        ChatUtils.error("Unable to clip.");
         return false;
     }
 
     @Override
     public void build(LiteralArgumentBuilder<CommandSource> builder) {
         builder.then(literal("up").executes(c -> {
-            if(!doAutoClip(1)) ChatUtils.error("Unable to clip.");
+            doAutoClip(1);
             return SINGLE_SUCCESS;
         }));
         builder.then(literal("down").executes(c -> {
-            if(!doAutoClip(-1)) ChatUtils.error("Unable to clip.");
+            doAutoClip(-1);
             return SINGLE_SUCCESS;
         }));
     }
