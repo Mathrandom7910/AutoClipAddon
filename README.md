@@ -1,8 +1,7 @@
-# Meteor Addon Template
+# Auto clip addon
 
-A template to allow easy usage of the Meteor Addon API.
+This was a terrible idea by <a href="https://github.com/0xEnjoy">0xEnjoy</a>
 
-### How to use:  
-- Clone this project
-- Use this template to create new modules/commands
-- Run the mod with Meteor.
+Wasn't sure how to properly make a fork lmfao, so yea
+
+also like 2 lines of trash code
