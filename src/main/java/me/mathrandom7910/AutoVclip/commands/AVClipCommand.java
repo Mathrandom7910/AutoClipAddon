@@ -23,7 +23,7 @@ public class AVClipCommand extends Command {
 
     private boolean doAutoClip(int incr) {
         BlockPos pos = mc.player.getBlockPos();
-        for(int i = incr; i < 100 * incr; i += incr) {
+        for(int i = incr; i < 10 * incr; i += incr) {
             if(getBlock(mc.player.getBlockPos().add(0, i, 0)) == Blocks.AIR && getBlock(mc.player.getBlockPos().add(0, i + 1, 0)) == Blocks.AIR) {
                 ChatUtils.info("Found clip block " + i + " blocks " + (i > 1 ? "up" : "down") + ".");
                 mc.player.setPosition(pos.getX(), pos.getY() + i, pos.getZ());
