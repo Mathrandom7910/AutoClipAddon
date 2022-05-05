@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "id": "addon-template",
+  "id": "autovclip",
   "version": "${version}",
-  "name": "Addon Template",
-  "description": "An addon template for the Meteor addons.",
+  "name": "Auto VClip",
+  "description": "Why do people have such bad ideas.",
   "authors": [
-    "seasnail8169"
+    "mathrandom7910"
   ],
   "contact": {
     "repo": "https://github.com/MeteorDevelopment/meteor-addon-template"
@@ -14,7 +14,7 @@
   "environment": "client",
   "entrypoints": {
     "meteor": [
-      "dummy.addon.template.TemplateAddon"
+      "me.mathrandom7910.AutoVclip.AutoVclipAddon"
     ]
   },
   "mixins": [
