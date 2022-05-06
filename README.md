@@ -12,4 +12,4 @@ This was a ~~terrible~~ wonderful idea by <a href="https://github.com/0xEnjoy">0
 
 Also 2 more Extra! lines, of even worse code.
 
-Hey listen. Stop bullying me. if it works, it works.
+Stop bullying me. if it works, it works.
