@@ -8,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.command.CommandSource;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.client.network.ClientPlayerEntity;
 
 import static com.mojang.brigadier.Command.SINGLE_SUCCESS;
 
@@ -21,14 +22,16 @@ public class AVClipCommand extends Command {
         return mc.player.world.getBlockState(pos).getBlock();
     }
 
-    private boolean doAutoClip(int incr) {
+    private boolean doAutoClip(float incr) {
         BlockPos pos = mc.player.getBlockPos();
         //      -1            -10          -1
+        ClientPlayerEntity player = mc.player;
+        assert player != null;
         if(incr == 0) incr = 1;
-        for(int i = incr; incr > 0 ? i <= 10 : i >= -10; i += incr) {
+        for(float i = incr; incr > 0 ? i <= 10 : i >= -10; i += incr) {
             if(getBlock(pos.add(0, i, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 1, 0)) == Blocks.AIR) {
                 ChatUtils.info("Found clip block " + i + " blocks " + (incr > 0 ? "up" : "down") + ".");
-                mc.player.setPosition(pos.getX(), pos.getY() + i, pos.getZ());
+                player.setPosition(player.getX(), player.getY() + i -1, player.getZ());
                 return true;
             }
         }
