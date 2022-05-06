@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "id": "autoclip",
   "version": "${version}",
-  "name": "Auto Clip",
-  "description": "Why do people have such bad ideas.",
+  "name": "Auto VClip (Fixed)",
+  "description": "Why do people who have such bad code, always blame the ideas?",
   "authors": [
-    "mathrandom7910"
+    "0xEnjoy, mathrandom7910"
   ],
   "contact": {
     "repo": "https://github.com/Mathrandom7910/AutoClipAddon"
