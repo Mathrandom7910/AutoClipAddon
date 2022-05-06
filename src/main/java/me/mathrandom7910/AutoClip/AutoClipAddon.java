@@ -2,6 +2,7 @@ package me.mathrandom7910.AutoClip;
 
 
 import me.mathrandom7910.AutoClip.commands.AVClipCommand;
+import me.mathrandom7910.AutoClip.commands.AVClipCommandFix;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.commands.Commands;
 import org.slf4j.Logger;
@@ -18,5 +19,6 @@ public class AutoClipAddon extends MeteorAddon {
 		//MeteorClient.EVENT_BUS.registerLambdaFactory("meteordevelopment.addons.template", (lookupInMethod, klass) -> (MethodHandles.Lookup) lookupInMethod.invoke(null, klass, MethodHandles.lookup()));
 		// Commands
 		Commands.get().add(new AVClipCommand());
+		Commands.get().add(new AVClipCommandFix());
 	}
 }
