@@ -31,7 +31,7 @@ public class AVClipCommandFix extends Command {
         for(float i = incr; incr > 0 ? i <= 10 : i >= -10; i += incr) {
             if(getBlock(pos.add(0, i, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 1, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 2, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 3, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 4, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 5, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 6, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 7, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 8, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 9, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 10, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 11, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 12, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 13, 0)) == Blocks.AIR && getBlock(pos.add(0, i + 14, 0)) == Blocks.AIR) {
                 ChatUtils.info("Found clip block " + i + " blocks " + (incr > 0 ? "up" : "down") + ".");
-                player.setPosition(player.getX(), player.getY() + i , player.getZ());
+                player.setPosition(player.getX(), player.getY() + i + 1 , player.getZ());
                 return true;
             }
         }
